@@ -16,13 +16,23 @@ compatibility_flags = ["nodejs_compat"]
 # - https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/workers/configuration/secrets/
-# [vars]
-# MY_VARIABLE = "production_value"
+[vars]
+# These should be added with `npx wrangler secret put EXPECTED_FROM_EMAIL`.
+# - The email that we accept audio from
+#EXPECTED_FROM_EMAIL = ""
+# - The email that we send message from (needs to be domain in the same CF account)
+#FROM_EMAIL = ""
+# - The email that we forward the message to
+#TO_EMAIL = ""
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai
-# [ai]
-# binding = "AI"
+[ai]
+binding = "AI"
+
+[[send_email]]
+name = "SEB"
+type = "send_email"
 
 # Bind an Analytics Engine dataset. Use Analytics Engine to write analytics within your Pages Function.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#analytics-engine-datasets
