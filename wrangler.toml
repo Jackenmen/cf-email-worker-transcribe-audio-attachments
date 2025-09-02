@@ -1,7 +1,7 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "cf-email-worker-transcribe-audio-attachments"
 main = "src/index.ts"
-compatibility_date = "2024-04-23"
+compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
 # wrangler.toml (wrangler v3.88.0^)
