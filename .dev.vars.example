@@ -1,0 +1,8 @@
+# These should be added with `npx wrangler secret put EXPECTED_FROM_EMAIL`
+# or specified in `.dev.vars` during local development.
+# - The email that we accept audio from
+EXPECTED_FROM_EMAIL = ""
+# - The email that we send message from (needs to be domain in the same CF account)
+FROM_EMAIL = ""
+# - The email that we forward the message to
+TO_EMAIL = ""
