@@ -36,7 +36,6 @@ binding = "AI"
 
 [[send_email]]
 name = "SEB"
-type = "send_email"
 
 # Bind an Analytics Engine dataset. Use Analytics Engine to write analytics within your Pages Function.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#analytics-engine-datasets
