@@ -31,8 +31,13 @@ export default {
 			if (typeof attachment.content === "string") {
 				continue;
 			}
-			const blob = attachment.content;
-			const input = {audio: [...new Uint8Array(blob)]};
+			const data = new Uint8Array(attachment.content);
+			newMessage.addAttachment({
+				contentType: attachment.mimeType,
+				filename: attachment.filename || '',
+				data: Buffer.from(data).toString('base64'),
+			});
+			const input = {audio: [...data]};
 			const response = await env.AI.run('@cf/openai/whisper', input);
 			transcriptions.push(response.text);
 			addedPlain += `\n- ${attachment.filename}:\n    ${response.text}`;
